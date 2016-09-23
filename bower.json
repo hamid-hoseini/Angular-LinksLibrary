@@ -1,0 +1,20 @@
+{
+  "name": "LinksLibrary",
+  "description": "Links management web application",
+  "main": "",
+  "authors": [
+    "Hamid Hoseini"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/hamid-hoseini/Angular-LinksLibrary",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "traceur": "0.0.79"
+  }
+}
