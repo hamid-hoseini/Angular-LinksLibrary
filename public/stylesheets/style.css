@@ -1,0 +1,94 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+header {
+    background-image: url(../images/linkslibrary.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+
+    position: relative;
+    top: 0;
+    left: 0;
+
+    min-width: 100%;
+    min-height: 100%;
+}
+.mainpg{
+    min-height: 100vh;
+}
+#appname{
+    position: relative;
+    top: 25vh;
+}
+.nounderline{
+    text-decoration: none;
+}
+h1{
+    font-family: 'Arizonia', cursive;
+    font-weight: 400;
+    font-size: 5em;
+    line-height: 75px;
+}
+.navbar-brand{
+    font-family: 'Arizonia', cursive;
+    font-weight: 400;
+    font-size: 2em;
+}
+.action{
+    cursor: pointer;
+}
+
+.input-group{
+    margin: 10px 0 10px 0;
+}
+.pagetop{
+    margin-top: 40px;
+}
+#reset{
+    margin-left: 10px;
+}
+.pageheader{
+    top: 15px;
+    position: relative;
+}
+.fa-link{
+    transform: rotate(90deg);
+}
+.mytooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.mytooltip .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: x-small;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.mytooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

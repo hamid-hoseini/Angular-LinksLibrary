@@ -1,0 +1,65 @@
+<div class="container pagetop">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="pageheader">List of favorite links</h3>
+            <div>
+                <div ng-if="vm.readSuccess" class='alert alert-success'>
+                    {{vm.readSuccessMessage}}
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                            <input type="text" class="form-control" placeholder="Search Title" ng-model="vm.search.title">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                            <input type="text" class="form-control" placeholder="Search Subject" ng-model="vm.search.subject">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table">
+                <tr>
+                    <th>
+                        <span ng-click="vm.sortType = 'title'; vm.sortReverse = !vm.sortReverse" class="action">
+                            Title
+                            <span ng-show="vm.sortType == 'title' && !vm.sortReverse" class="fa fa-caret-down action"></span>
+                            <span ng-show="vm.sortType == 'title' && vm.sortReverse" class="fa fa-caret-up action"></span>
+                        </span>
+                    </th>
+                    <th>
+                        <span ng-click="vm.sortType = 'subject'; vm.sortReverse = !vm.sortReverse" class="action">
+                            subject
+                            <span ng-show="vm.sortType == 'subject' && !vm.sortReverse" class="fa fa-caret-down action"></span>
+                            <span ng-show="vm.sortType == 'subject' && vm.sortReverse" class="fa fa-caret-up action"></span>
+                        </span>
+                    </th>
+                    <th>Edit</th>
+                    <th>Trash</th>
+                </tr>
+                <tr ng-repeat="link in vm.links | orderBy:vm.sortType:vm.sortReverse | filter:vm.search">
+                    <td class="col-md-7 col-xs-7"><a href="{{link.link}}" target="_blank" class="nounderline">{{link.title}}</a></td>
+                    <td class="col-md-3 col-xs-3">{{link.subject}}</td>
+                    <td class="col-md-1 col-xs-1">
+                        <span ng-click="vm.editLink(link)" class="action mytooltip"><i class="fa fa-edit fa-2x"></i>
+                            <span class="tooltiptext">Edit Link</span>
+                        </span>
+                    </td>
+                    <td class="col-md-1 col-xs-1">
+                        <span ng-click="vm.deleteLink(link._id)" class="action mytooltip"><i class="fa fa-trash-o fa-2x"></i>
+                            <span class="tooltiptext">Delete Link</span>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

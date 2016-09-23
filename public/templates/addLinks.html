@@ -1,0 +1,44 @@
+<div class="container pagetop">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="pageheader">Add a New favorite link</h3>
+            <br/>
+            <div ng-if="vm.addSuccess" class='alert alert-success'>
+                Link successfully added. You can find it in the list of favorite links!
+            </div>
+            <div ng-if="vm.addFailed" class='alert alert-error'>
+                Sorry, something went wrong. Adding link was not successful.
+            </div>
+            <form name="vm.addLinksForm" ng-submit='vm.operator()' novalidate>
+                <div class="input-group">
+                    <span>Title</span>
+                    <input type="text" name="title" class="form-control" ng-model="vm.link.title" required ng-model-options="{ updateOn: 'blur' }">
+                </div>
+                <div class="input-group">
+                    <span>URL</span>
+                    <input type="text" name="url" class="form-control" ng-model="vm.link.linkUrl" required ng-model-options="{ updateOn: 'blur' }">
+                </div>
+                <div class="input-group">
+                    <span>Subject</span>
+                    <input type="text" name="subject" class="form-control" ng-model="vm.link.subject" required ng-model-options="{ updateOn: 'blur' }">
+                </div>
+                <div class="input-group">
+                    <span>Description</span>
+                    <textarea type="text" name="description" class="form-control" ng-model="vm.link.description"  rows="6"></textarea>
+                </div>
+                <div class="input-group">
+                    <input type="submit" value="{{vm.btnTitle}}" class="btn btn-primary" ng-disabled="vm.addLinksForm.$invalid" />
+                    <button ng-click="vm.resetForm()" class="btn" id="reset">Reset</button>
+                </div>
+            </form>
+
+            <div ng-if='vm.addLinksForm.title.$dirty' ng-messages='vm.addLinksForm.title.$error' class='error-messages'>
+                <div ng-message='required'>Title is missing value</div>
+                <div ng-message='uniqueBookTitle'>Title already exists</div>
+            </div>
+            <div ng-if='vm.addLinksForm.author.$dirty' ng-messages='vm.addLinksForm.linkUrl.$error' class='error-messages'>
+                <div ng-message='required'>Author is missing value</div>
+            </div>
+        </div>
+    </div>
+</div>
