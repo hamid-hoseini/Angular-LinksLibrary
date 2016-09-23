@@ -5,5 +5,5 @@ module.exports = {
 
     'secret': 'ilovejavascript',
     //'database': 'mongodb://localhost/linksLibraryDB'
-    'database': 'mongodb://admin:spanishguitar@ds037175.mongolab.com:37175/linksLibraryDB'
+    'database': 'mongodb://admin:spanishguitar@ds035816.mlab.com:35816/linkslibrarydb'
 };
